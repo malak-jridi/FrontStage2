@@ -1,0 +1,59 @@
+
+.block-wrap {
+    padding: 32px 0 0;
+    position: relative;
+}
+.main-title {
+    color: #3c4447;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+}
+.box-group {
+    padding: 12px 0 20px;
+}
+.resume-pane {
+    display: none;
+    opacity: 0;
+    position: relative;
+    width: 100%;
+    will-change: opacity;
+}
+.resume-pane-active {
+    -webkit-animation: styles_PaneToggle__WxvSK .2s forwards;
+    animation: styles_PaneToggle__WxvSK .2s forwards;
+    display: block;
+}
+@-webkit-keyframes styles_PaneToggle__WxvSK {
+    to { opacity: 1 }
+}
+@keyframes styles_PaneToggle__WxvSK {
+    to { opacity: 1 }
+}
+.tutor-education-item {
+    align-items: flex-start;
+    border-bottom: 1px solid #eef0f2;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    list-style: none;
+    padding: 24px 0;
+}
+.tutor-education-item-column {
+    color: #6f757b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    padding-right: 12px;
+    position: relative;
+}
+.check-mark-wrap {
+    align-items: center;
+    color: #50bf16;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 500;
+    margin-top: 4px;
+}

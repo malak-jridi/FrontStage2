@@ -1,0 +1,16 @@
+<div class="chat-box">
+    <div id="chat-messages">
+        <li *ngFor="let message of messages">
+            <div *ngIf="message.type === 'JOIN'">{{ message.sender }} joined!</div>
+            <div *ngIf="message.type === 'LEAVE'">{{ message.sender }} left!</div>
+            <div *ngIf="message.type === 'CHAT'" class="chat-message">
+              
+              <span>{{ message.sender }} : {{ message.content }}</span>
+            </div>
+          </li>
+    </div>
+    <form id="chat-form" (ngSubmit)="sendMessage()" >
+        <input type="text" id="chat-input"  [(ngModel)]="message" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Type your message...">
+        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+    </form>
+</div>

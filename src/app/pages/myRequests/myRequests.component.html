@@ -1,0 +1,44 @@
+<div class="bg-light">
+  <div class="tutor-wrapper">
+    <div class="mt-4">
+      <h1 class="">Your Booking History For Online English tutors & teachers for private lessons</h1>
+
+      <div *ngIf="paymentStatus && paymentStatus=='success'" class="alert alert-success mt-2" role="alert">
+        <mat-icon class="align-middle">check</mat-icon> Payment done successfully
+      </div>
+
+      <div *ngIf="paymentStatus && paymentStatus=='failed'" class="alert alert-danger mt-2" role="alert">
+        <mat-icon class="align-middle">close</mat-icon> Payment failed
+      </div>
+
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-12">
+        <ul *ngFor="let booking of bookings" class="list-unstyled">
+          <li class="mt-2">
+            <app-booking-card-item [booking]="booking"></app-booking-card-item>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="col-md-4">
+        <div class="tutor-side-wrapper mt-2">
+          <div class="video-wrapper">
+            <div class="video-preview" role="button">
+              <div class="video-button"></div>
+            </div>
+          </div>
+          <div class="availability-timezone-detail">
+            <app-icon-web fill="#aeb5bc"></app-icon-web>
+            <span class="ml-1 mt-1">Times are shown in your local timezone</span>
+          </div>
+          <div class="mt-2">
+            <button class="button book-btn btn-secondary bg-secondary w-100">
+              View full schedule
+            </button>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+

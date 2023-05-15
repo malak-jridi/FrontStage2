@@ -1,0 +1,10 @@
+<div class="bg-dark px-5 justify-content-center" style="display: flex;">
+  <ul class="list-group list-group-horizontal" *ngFor="let item of steps">
+    <li class="list-group-item border-0 bg-dark" [ngClass]="step === item.index ? 'text-white' : 'text-secondary'">
+      <div class="row align-items-center font-weight-bold">
+        <div class="border rounded-circle align-items-center" [ngClass]="step === item.index ? 'border-white' : 'border-secondary'" style="padding: 0 8px;">{{item.index}}</div>
+        <div class="ml-2">{{item.title}}</div>
+      </div>
+    </li>
+  </ul>
+</div>

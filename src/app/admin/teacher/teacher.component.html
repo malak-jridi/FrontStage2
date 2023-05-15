@@ -1,0 +1,84 @@
+<div class="card p-4 m-4">
+    <div>
+      <div class="page-title">Teacher</div>
+    </div>
+    <div>
+  <table class="table align-middle mb-0 bg-white custom-table">
+    <thead class="bg-light">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Surname</th>
+        <th>Country</th>
+        <th>Rate</th>
+        <th>Language</th>
+        <th>Headline</th>
+        <th>Description</th>
+        <th>Approved/ NotApproved</th>
+        <th>Download</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let teacher of teachers">
+      <tr>
+       
+          <td>
+            {{teacher.id}}
+          </td>
+          <td>
+  
+            {{teacher.name}}
+          </td>
+          
+          <td>
+  
+            {{teacher.email}}
+          </td>
+          <td>
+  
+            {{teacher.surname}}
+          </td>
+          <td>
+  
+            {{teacher.country}}
+          </td>
+          <td>
+  
+            {{teacher.rate}}
+          </td>
+          <td>
+  
+            {{teacher.language}}
+          </td>
+          <td>
+  
+            {{teacher.headline}}
+          </td>
+          <td>
+  
+            {{teacher.description}}
+          </td>
+          <td>
+            <div *ngIf="teacher.status;else elseBlock" style="color: blue;"> Approved </div>
+            <ng-template #elseBlock><button class="btn btn-success" (click)="clickCheck(teacher.id)">Action Approved</button></ng-template>
+          </td>
+          <td>
+           <div class="text-center">
+            <button class="btn btn-link" (click)="downloadCertification(teacher.certification)" ><span>Download Certification</span></button>
+            <button class="btn btn-link" (click)="downloadVideo(teacher.video)"><span>Download <br>Video</span></button>
+           </div>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteTeahcer(teacher.id)">Delete</button>
+        </td>
+      </tr>
+    </ng-container>
+  
+    </tbody>
+  </table>
+  </div>
+  </div>
+  
+  

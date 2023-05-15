@@ -1,0 +1,25 @@
+<section id="schedule" class="block-wrap">
+  <h3 class="main-title"><span>Schedule</span></h3>
+  <div class="box-group">
+    <div class="notification">
+      <p class="notification-row">
+        <app-icon-outline-question></app-icon-outline-question>
+        <span>Choose the time for your first lesson. The timings are displayed in your local timezone.</span>
+      </p>
+      <div class="time-schedular">
+        <jqxScheduler 
+          #scheduler
+          [width]="getWidth()"
+          [height]="600"
+          [date]="date"
+          [source]="dataAdapter"
+          [resources]="resources"
+          [showLegend]="true"
+          [views]="views"
+          [appointmentDataFields]="appointmentDataFields">
+        </jqxScheduler>
+      </div>
+    </div>
+  </div>
+
+</section>

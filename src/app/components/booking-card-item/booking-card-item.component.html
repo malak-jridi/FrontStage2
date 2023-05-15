@@ -1,0 +1,150 @@
+<div class="tutor-item-wrapper">
+  <div class="row w-100">
+    <div class="col-md-2">
+      <div class="tutor-image-wrapper" *ngIf="user && user.role=='student'">
+        <a [href]="'/tutor/' + booking.tutor.id" target="_blank">
+          <img [src]="booking.tutor.image || '//ssl.gstatic.com/accounts/ui/avatar_2x.png'" alt="tutor-image" class="tutor-image" />
+        </a>
+      </div>
+
+      <div class="tutor-image-wrapper" *ngIf="user && user.role=='teacher'">
+        <a [href]="'/tutor/' + booking.tutor.id" target="_blank">
+          <img [src]="booking.student.image || '//ssl.gstatic.com/accounts/ui/avatar_2x.png'" alt="tutor-image" class="tutor-image" />
+        </a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="tutor-info-wrapper">
+        <div class="d-flex align-items-start justify-content-between">
+          <div>
+            <a [href]="'/tutor/' + booking.tutor.id" target="_blank" class="tutor-name flex align-items-center">
+                <span *ngIf="user && user.role=='student'">
+                  {{booking.tutor.name}}
+                </span>
+
+                <span *ngIf="user && user.role=='teacher'">
+                  {{booking.student.name}}
+                </span>
+                
+              
+                <app-icon-study-subject class="tutor-language"></app-icon-study-subject>
+                <span class="ml-1 mt-1 tutor-language">{{booking.tutor.language}}</span>
+
+                <span *ngIf="!(booking.accepted)" class="badge badge-danger ml-3">
+                  Pending Approval
+                </span>
+
+                <span *ngIf="(booking.accepted) && booking.paymentStatus != 'complete'" class="badge badge-warning ml-3">
+                  Pending Payment
+                </span>          
+                
+                <span *ngIf="(booking.accepted) && booking.paymentStatus == 'complete'" class="badge badge-success ml-3">
+                  Booked
+                </span>          
+            </a>          
+
+            <div class="flex-row mt-2">
+              <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Booking Date:</span>
+              <span class="bg-light-blue">{{booking.bookingDate | date :'shortDate'}} </span>
+            </div>
+
+            <div *ngIf="booking.bookingFrom && booking.bookingTo" class="flex-row mt-2">
+              <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Booking Time:</span>
+              <span class="bg-light-blue">{{booking.bookingFrom}} To {{booking.bookingTo}}</span>
+            </div>
+
+            <div class="flex-row mt-2 align-items-center">
+              <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Price:</span>
+              <span class="bg-light-blue"
+                
+              >${{booking.tutor.rate || 0}} </span>
+
+              <span *ngIf="booking.paymentStatus == 'complete' && booking.stripeSessionId" class="ml-2" matTooltip="Payment Id {{booking.stripeSessionId}} | Payment status {{booking.paymentStatus}} ">
+                    <mat-icon class="align-middle">help_outline</mat-icon>
+              </span>
+            </div>
+
+            <span class="tutor-headline">{{booking.tutor.headline}} -</span>
+            <span class="tutor-description">
+              {{booking.tutor.description}}
+            </span>
+            <div class="tutor-toggle-button">
+              Read more
+            </div>
+          </div>
+          <div class=" col-md-4">
+            <div class="tutor-price-indicator text-left">
+              <div class="d-flex flex-column mt-3 col-12">
+
+                <button mat-raised-button color="gray" *ngIf="!(booking.accepted) && user && user.role=='student'" class="btn btn-gray" disabled type="button" (click)="modalService.open('modal-1')">
+                  Waiting For Approval
+                </button>
+  
+                <button  mat-raised-button color="light-green" *ngIf="!(booking.accepted) && user && user.role=='teacher'" class="btn-primary button" type="button" (click)="accept()" [disabled]="message == 'Wait...'">
+                  <span *ngIf="(message != 'Wait...')">Approve</span>
+                  
+                  <div *ngIf="(message == 'Wait...')" class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </button>
+  
+  
+                <div *ngIf="booking.accepted && booking.paymentStatus != 'complete' && user && user.role=='student'" >
+                  <form #form action="http://localhost:8585/api/booking/create-checkout-session/{{booking.id}}" method="POST">
+                    <!-- <input type='hidden' value='1000' name='amount' />
+                    <label>Price:10</label> -->
+                    <button mat-raised-button color="light-green" type="button" id="checkout-button" class="btn-primary button mt-2 bg-light-green" (click)="form.submit()" [disabled]="message == 'Wait...'">
+                      <span *ngIf="(message != 'Wait...')">Checkout</span>
+                  
+                      <div *ngIf="(message == 'Wait...')" class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    </button>
+                  </form>
+                </div>
+  
+                <button mat-raised-button color="gray"  *ngIf="booking.accepted && booking.paymentStatus != 'complete' && user && user.role=='teacher'" class="btn-danger button" disabled type="button" >
+                  Waiting For Payment..
+                </button>
+                <a mat-raised-button color="light-green"   [href]="'/videoCall/' + booking.id" *ngIf="booking.accepted && booking.paymentStatus == 'complete' && user && (user.role=='teacher'  || user.role =='student') && showButton "  class="btn-primary button" type="button" >
+                  Join Meeting
+                </a>
+                <!-- Modal -->
+                <jw-modal id="modal-1">
+                  <div *ngIf="message && message != 'Wait...'" class="alert alert-secondary" role="alert">
+                    {{ message }}
+                  </div>
+                  
+                  <mat-form-field class="w-100">
+                    <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl"
+                       [disabled]="disabled">
+                    <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                    <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
+                      [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [touchUi]="touchUi"
+                      [color]="color" [enableMeridian]="enableMeridian">
+                    </ngx-mat-datetime-picker>
+                  </mat-form-field>
+  
+                  <button  class="btn-primary button" >Book</button>
+                  <button  class="btn-secondary button mt-2" (click)="modalService.close();">Close</button>
+                </jw-modal>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-start">
+          <div class="col-md-8">
+            
+          </div>
+          <div class="col-md-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

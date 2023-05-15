@@ -1,0 +1,12 @@
+:host {
+    width: 100%;
+}
+
+.expand-button {
+    color: #3bb3bd;
+    cursor: pointer;
+    display: inline-flex;
+    margin-top: 8px;
+    white-space: nowrap;
+    font-size: 14px;
+}

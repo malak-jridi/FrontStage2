@@ -1,0 +1,512 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "jqwidgets-ng/jqwidgets/styles/jqx.base.css";
+
+@font-face {
+  font-family: "PreplyInterV";
+  font-weight: 400 700;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  src: url("/assets/fonts/en/PreplyInter.var.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+AB, U+BB;
+}
+/* Cyrillic */
+@font-face {
+  font-family: "PreplyInterV";
+  font-weight: 400 700;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  src: url("/assets/fonts/cyr/PreplyInter.var.woff2") format("woff2");
+  unicode-range: U+401, U+404, U+406, U+407, U+410-44F, U+451, U+454, U+456,
+    U+457, U+490, U+491;
+}
+/* Latin Extended (Polish, German, French, Italian, Turkish, Portuguese, Spanish) */
+@font-face {
+  font-family: "PreplyInterV";
+  font-weight: 400 700;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  src: url("/assets/fonts/lat/PreplyInter.var.woff2") format("woff2");
+  unicode-range: U+A1, U+BF-C4, U+C6-CF, U+D1-D6, U+D9-DC, U+DF-E4, U+E6-EF,
+    U+F1-F6, U+F9-FC, U+FF, U+104-107, U+118, U+119, U+11E, U+11F, U+131,
+    U+141-144, U+152, U+153, U+15A, U+15B, U+15E, U+15F, U+178-17C, U+1E9E;
+}
+/* Non-variable fonts */
+/* English */
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/en/PreplyInter.regular.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+AB, U+BB;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/en/PreplyInter.medium.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+AB, U+BB;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/en/PreplyInter.bold.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+AB, U+BB;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/en/PreplyInter.italic.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+AB, U+BB;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/en/PreplyInter.medium.italic.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+AB, U+BB;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/en/PreplyInter.bold.italic.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+AB, U+BB;
+}
+/* Cyrillic */
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/cyr/PreplyInter.regular.woff2") format("woff2");
+  unicode-range: U+401, U+404, U+406, U+407, U+410-44F, U+451, U+454, U+456,
+    U+457, U+490, U+491;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/cyr/PreplyInter.medium.woff2") format("woff2");
+  unicode-range: U+401, U+404, U+406, U+407, U+410-44F, U+451, U+454, U+456,
+    U+457, U+490, U+491;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/cyr/PreplyInter.bold.woff2") format("woff2");
+  unicode-range: U+401, U+404, U+406, U+407, U+410-44F, U+451, U+454, U+456,
+    U+457, U+490, U+491;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/cyr/PreplyInter.italic.woff2") format("woff2");
+  unicode-range: U+401, U+404, U+406, U+407, U+410-44F, U+451, U+454, U+456,
+    U+457, U+490, U+491;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/cyr/PreplyInter.medium.italic.woff2") format("woff2");
+  unicode-range: U+401, U+404, U+406, U+407, U+410-44F, U+451, U+454, U+456,
+    U+457, U+490, U+491;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/cyr/PreplyInter.bold.italic.woff2") format("woff2");
+  unicode-range: U+401, U+404, U+406, U+407, U+410-44F, U+451, U+454, U+456,
+    U+457, U+490, U+491;
+}
+/* Latin Extended (Polish, German, French, Italian, Turkish, Portuguese, Spanish) */
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/lat/PreplyInter.regular.woff2") format("woff2");
+  unicode-range: U+A1, U+BF-C4, U+C6-CF, U+D1-D6, U+D9-DC, U+DF-E4, U+E6-EF,
+    U+F1-F6, U+F9-FC, U+FF, U+104-107, U+118, U+119, U+11E, U+11F, U+131,
+    U+141-144, U+152, U+153, U+15A, U+15B, U+15E, U+15F, U+178-17C, U+1E9E;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/lat/PreplyInter.medium.woff2") format("woff2");
+  unicode-range: U+A1, U+BF-C4, U+C6-CF, U+D1-D6, U+D9-DC, U+DF-E4, U+E6-EF,
+    U+F1-F6, U+F9-FC, U+FF, U+104-107, U+118, U+119, U+11E, U+11F, U+131,
+    U+141-144, U+152, U+153, U+15A, U+15B, U+15E, U+15F, U+178-17C, U+1E9E;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/lat/PreplyInter.bold.woff2") format("woff2");
+  unicode-range: U+A1, U+BF-C4, U+C6-CF, U+D1-D6, U+D9-DC, U+DF-E4, U+E6-EF,
+    U+F1-F6, U+F9-FC, U+FF, U+104-107, U+118, U+119, U+11E, U+11F, U+131,
+    U+141-144, U+152, U+153, U+15A, U+15B, U+15E, U+15F, U+178-17C, U+1E9E;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/lat/PreplyInter.italic.woff2") format("woff2");
+  unicode-range: U+A1, U+BF-C4, U+C6-CF, U+D1-D6, U+D9-DC, U+DF-E4, U+E6-EF,
+    U+F1-F6, U+F9-FC, U+FF, U+104-107, U+118, U+119, U+11E, U+11F, U+131,
+    U+141-144, U+152, U+153, U+15A, U+15B, U+15E, U+15F, U+178-17C, U+1E9E;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/lat/PreplyInter.medium.italic.woff2") format("woff2");
+  unicode-range: U+A1, U+BF-C4, U+C6-CF, U+D1-D6, U+D9-DC, U+DF-E4, U+E6-EF,
+    U+F1-F6, U+F9-FC, U+FF, U+104-107, U+118, U+119, U+11E, U+11F, U+131,
+    U+141-144, U+152, U+153, U+15A, U+15B, U+15E, U+15F, U+178-17C, U+1E9E;
+}
+@font-face {
+  font-family: "PreplyInter";
+  font-style: oblique 10deg;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/lat/PreplyInter.bold.italic.woff2") format("woff2");
+  unicode-range: U+A1, U+BF-C4, U+C6-CF, U+D1-D6, U+D9-DC, U+DF-E4, U+E6-EF,
+    U+F1-F6, U+F9-FC, U+FF, U+104-107, U+118, U+119, U+11E, U+11F, U+131,
+    U+141-144, U+152, U+153, U+15A, U+15B, U+15E, U+15F, U+178-17C, U+1E9E;
+}
+
+/* Fallback */
+@font-face {
+  font-family: "PreplyInter-Fallback";
+  size-adjust: 109.71%;
+  src: local("Arial");
+}
+
+/* Applying variable when supported */
+* {
+  font-family: "PreplyInter", "PreplyInter-Fallback", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  * {
+    font-family: "PreplyInterV", "PreplyInter-Fallback", sans-serif;
+  }
+}
+
+* {
+  font-family: "PreplyInterV", "PreplyInter-Fallback", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: "PreplyInter", "PreplyInter-Fallback", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  * {
+    font-family: "PreplyInterV", "PreplyInter-Fallback", sans-serif;
+  }
+}
+
+* {
+  font-family: "PreplyInterV", "PreplyInter-Fallback", sans-serif;
+}
+/* reset styling */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--ctm-color-body);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  height: 100%;
+  color: var(--ctm-color-black);
+  font-size: 14px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+main {
+  -webkit-box-flex: 1;
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html,
+body,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+}
+a:focus,
+button:focus {
+  outline: none !important;
+}
+
+a,
+button {
+  outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: normal;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+p,
+div {
+  line-height: 1.5;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+/* reset styling end*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #eff3f3;
+}
+.list-group-item-action:active {
+  background-color: #0096b2 !important;
+  color: #fff !important;
+}
+.topbar-wrapper {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.main {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.sidebar-heading {
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ctm-sidebar {
+  min-height: 100vh;
+  margin-left: 0;
+}
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #5e5c5c !important;
+}
+.table-btn {
+  border: 1px solid #0096b2;
+  color: #0096b2;
+  text-decoration: none !important;
+  padding: 2px 7px;
+}
+.table-btn:hover {
+  background-color: #c2e5ec;
+  color: #0096b2;
+}
+.sidebar-sub-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+table td {
+  vertical-align: middle !important;
+}
+.custom-table{
+  width:100%;
+  color: #767575 !important;
+}
+.table thead th{
+border-bottom: 0;
+}
+.ctm-sidebar i{
+  font-size: 16px;
+  color: #0096b2;
+}

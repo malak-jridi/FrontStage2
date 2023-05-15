@@ -1,0 +1,134 @@
+
+.profile-side-panel {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 14px rgb(0 0 0 / 5%);
+    padding: 0;
+    width: 100%;
+}
+.video-wrapper {
+    /* background-color: #000; */
+    overflow: hidden;
+    /* padding-bottom: 56.25%; */
+    position: relative;
+}
+.video-preview {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background-image:url('//img.youtube.com/vi/E68Qjzi8XQE/0.jpg')
+}
+.video-button {
+    background: #384047;
+    border-radius: 4px;
+    height: 54px;
+    left: 50%;
+    margin-left: -45px;
+    margin-top: -27px;
+    opacity: .7;
+    position: absolute;
+    top: 50%;
+    transition: opacity .1s,transform .1s;
+    width: 90px;
+    z-index: 3;
+}
+.video-button:after {
+    border-color: transparent transparent transparent #fff;
+    border-style: solid;
+    border-width: 10px 12px;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-6px,-10px);
+}
+.profile-side-main-wrapper {
+    padding: 20px;
+    text-align: center;
+}
+.core-indicator-wrap {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: space-evenly;
+    margin-top: 0;
+    max-width: 100%;
+}
+.rating-indicator {
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+}
+.rating-number {
+    margin-left: 4px;
+}
+.rating-indicator-text {
+    align-items: baseline;
+    background: none;
+    border: 0;
+    display: inline-flex;
+    font-size: 13px;
+    line-height: 1.42857143;
+    margin-top: 4px;
+    padding: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+.review-number {
+    color: #384047;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    margin-right: 4px;
+}
+.rating-text {
+    color: #6f757b;
+}
+.price-indicator-duration {
+    align-items: flex-end;
+    color: #6f757b;
+    display: inline-flex;
+    font-size: 13px;
+    line-height: 1.42857143;
+    margin-top: 4px;
+    text-align: center;
+}
+.price-indicator-value {
+    font-size: 20px;
+    margin-left: 4px;
+}
+.more-information-wrap {
+    font-size: 14px;
+}
+
+.student-considering-this-tour {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 14px rgb(0 0 0 / 5%);
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    justify-content: stretch;
+    margin-top: 16px;
+    padding: 20px 24px 20px 20px;
+    width: 100%;
+}
+
+.student-considering-this-tour {
+    font-size: 14px;
+}
+
+.button {
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.button:hover {
+    border: 1px solid #22a2be;
+}

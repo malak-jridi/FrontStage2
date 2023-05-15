@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-8 form-group">
+    <label for="file" class="btn-default p-0">
+      <span class="btn btn-primary btn-sm">Choose</span>
+      <input type="file" id="file" class="d-none" (change)="selectFile($event)" [accept]="format + '/*'">
+    </label>
+  </div>
+
+  <div class="col-4">
+    <button
+      class="btn btn-success btn-sm float-right"
+      [disabled]="!selectedFiles"
+      (click)="upload()"
+    >
+      Upload
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <img [src]="preview" *ngIf="format==='image' && preview" class="rounded preview">
+    <video [src]="preview" *ngIf="format==='video' && preview" class="w-100" controls></video>
+  </div>
+</div>
+  
+<div *ngIf="currentFile && progress" class="progress my-3">
+  <div
+    class="progress-bar progress-bar-info"
+    role="progressbar"
+    attr.aria-valuenow="{{ progress }}"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    [ngStyle]="{ width: progress + '%' }"
+  >
+    {{ progress }}%
+  </div>
+</div>
+
+<div *ngIf="message" class="alert alert-secondary mt-2" role="alert">
+  {{ message }}
+</div>
+
+<!-- <div class="card mt-3">
+  <div class="card-header">List of Images</div>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let image of imageInfos | async" class="list-group-item">
+      <p><a href="{{ image.url }}">{{ image.name }}</a></p>
+      <img src="{{ image.url }}" alt="{{ image.name }}" height="80px" />
+    </li>
+  </ul>
+</div> -->

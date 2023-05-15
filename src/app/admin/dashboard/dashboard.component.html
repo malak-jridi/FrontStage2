@@ -1,0 +1,177 @@
+<div class="card p-4 m-4">
+  <div class="d-flex justify-content-between">
+    <div><div class="page-title">Student</div></div>
+
+    <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Create Student</button>
+    </div>
+  </div>
+  <div>
+  </div>
+  
+  <div>
+<table class="table align-middle mb-0 bg-white custom-table">
+  <thead class="bg-light">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Surname</th>
+      <th>Created at</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let student of students">
+    <tr>
+     
+        <td>
+          {{student.id}}
+        </td>
+        <td>
+
+          {{student.name}}
+        </td>
+        
+        <td>
+
+          {{student.email}}
+        </td>
+        <td>
+
+          {{student.surname}}
+        </td>
+        <td>
+
+          {{student.createdAt}}
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+            (click)="edit(student)">Edit</button>
+            <button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+        </td>
+    </tr>
+  </ng-container>
+
+  </tbody>
+</table>
+</div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Student</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="formData" id="login_form" class="form__wrap mt-3"   >
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Your name"
+              autocomplete="off"
+              formControlName="name"
+              value=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Surname *</label>
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              class="form-control"
+              placeholder="Surname"
+              autocomplete="off"
+              formControlName="surname"
+              value=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Your email"
+              autocomplete="off"
+              formControlName="email"
+              value=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Your password"
+              formControlName="password"
+              value=""
+            />
+          </div>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary submit__btn" data-dismiss="modal" (click)="onSubmit()"  >Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Student</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #updateForm="ngForm">
+          <div class="form-group">
+            <label for="name">Student Name :</label>
+            <input type="text" #name [(ngModel)]="studentToUpdate.name" name="name" id="name"
+              class="form-control" placeholder="Student Roll number">
+          </div>
+          <div class="form-group">
+            <label for="surname">Student Surname :</label>
+            <input type="text" #surname [(ngModel)]="studentToUpdate.surname" name="surname" id="surname" class="form-control"
+              placeholder="Student Surname">
+          </div>
+          <div class="form-group">
+            <label for="email">Student Email :</label>
+            <input type="text" #email [(ngModel)]="studentToUpdate.email" name="email" id="email"
+              class="form-control" placeholder="Student Email">
+          </div>
+          <div class="form-group">
+            <label for="Password">Student Password :</label>
+            <input type="password" #Password [(ngModel)]="studentToUpdate.password" name="password" id="password"
+              class="form-control" placeholder="Student Password">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-primary w-100" data-dismiss="modal" (click)="updateStudent()" >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

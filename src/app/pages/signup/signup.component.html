@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 form__wrapper">
+      <div class="form__container">
+        <div class="form__headerWrapper">
+          <h2 class="form__title">Sign up as a student</h2>
+          <p>
+            Already have an account?
+            <a href="/login">Log in</a>
+          </p>
+        </div>
+        <form id="login_form" class="form__wrap mt-3" [formGroup]="formData" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              placeholder="Your name"
+              autocomplete="off"
+              formControlName="name"
+              value=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Surname *</label>
+            <input
+              type="text"
+              id="surname"
+              class="form-control"
+              placeholder="Surname"
+              autocomplete="off"
+              formControlName="surname"
+              value=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Your email"
+              autocomplete="off"
+              formControlName="email"
+              value=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Your password"
+              formControlName="password"
+              value=""
+            />
+          </div>
+          <div class="form-check">
+            <input
+              type="checkbox"
+              checked=""
+              class="form-check-input"
+              id="remember-me-checkbox"
+              formControlName="remember"
+            />
+            <label class="form-check-label" for="remember-me-checkbox"
+              >Remember me</label
+            >
+          </div>
+          <button type="submit" class="btn btn-primary mt-3 submit__btn">
+            Sign up
+          </button>
+        </form>
+        <div class="form__footerWrapper">
+          <p>
+            By clicking Continue with or Sign up, you agree to Preply
+            <a
+              href="https://termsofuse.preply.com/terms_of_use/en_TermsOfService.pdf"
+              target="_blank"
+              >Terms of Service including Subscription Services Terms</a
+            >
+            and
+            <a
+              href="https://termsofuse.preply.com/terms_of_use/en_PrivacyPolicy.pdf"
+              target="_blank"
+              >Privacy Policy</a
+            >
+          </p>
+        </div>
+        <div>
+          <small class="error">{{message}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+<div class="bg-light">
+  <div class="tutor-profile-wrapper">
+    <div class="tutor-profile-column">
+      <div class="tutor-main-info">
+        <div class="tutor-main-info-wrapper">
+          <div class="tutor-image-wrapper mr-5">
+            <img [src]="tutor.image || '//ssl.gstatic.com/accounts/ui/avatar_2x.png'" alt="tutor-image" class="tutor-image" />
+          </div>
+          <section class="tutor-info">
+            <div class="info-top mb-4">
+              <section class="head-info">
+                <h2 class="tutor-name">{{tutor.name}}.</h2>
+                <span class="tutor-country">{{tutor.country}}</span>
+                <!-- <img src="https://static.preply.com/groot/country_flags/4x3/us.svg" alt="United States of America" width="21" height="14" class="flag-image mx-1"> -->
+                <!-- <app-icon-shield-check></app-icon-shield-check> -->
+              </section>
+              <span class="info-headline">{{tutor.headline || '-'}}</span>
+            </div>
+            <ul class="info-bottom">
+              <li class="d-flex align-items-center mb-1">
+                <div class="tutor-subjects">
+                  <app-icon-study-subject></app-icon-study-subject>
+                  <span class="mx-2 mt-1">Teaches</span>
+                  <span class="mt-1">{{tutor.language}} lessons</span>
+                </div>
+              </li>
+              <li class="d-flex align-items-center mb-1">
+                <div class="tutor-subjects">
+                  <app-icon-comment></app-icon-comment>
+                  <span class="mx-2">Speaks {{tutor.language}}</span>
+                  <span class="level-badge">Native</span>
+                </div>
+              </li>
+              <li class="d-flex align-items-center mb-1">
+                <div class="tutor-subjects">
+                  <app-icon-aim></app-icon-aim>
+                  <span class="ml-2 mt-1">1,295 lessons taught</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="label-wrapper">
+          <section class="tutor-label-wrapper">
+            <app-icon-lightning></app-icon-lightning>
+            <div class="tutor-label-text">
+              <span class="tutor-label-title">Super Tutor</span>
+              <div class="tutor-label-subtitle">
+                A highly rated and reliable tutor.
+                <a class="tutor-label-subtitle" href="https://help.preply.com/en/articles/6062191-what-is-a-super-tutor?_ga=2.252158031.770015815.1677700739-1772836388.1677700739" target="_blank" rel="noreferrer">Learn more</a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- <section class="seo-review">
+          <img class="image-avatar" src="https://static.preply.com/images/user_default.gif" alt="https://static.preply.com/images/user_default.gif">
+          <div class="review-content">
+            <div class="review-content-head">
+              <span class="review-content-author font-weight-bold">Andrzej</span>
+              <h3 class="review-content-subTitle">Recent review</h3>
+            </div>
+            <blockquote class="review-text">Perfect!</blockquote>
+            <button class="review-link">View all reviews</button>
+          </div>
+        </section> -->
+      </div>
+      <div class="fixed-tab-header">
+        <ul class="fixed-header-list">
+          <li class="fixed-header-list-item fixed-header-list-item-active" (click)="scrollDown('tutor-about')">
+            About
+          </li>
+          <li class="fixed-header-list-item" (click)="scrollDown('tutor-schedule')" hidden>
+            Schedule
+          </li>
+          <!-- <li class="fixed-header-list-item">Reviews (8)</li>
+          <li class="fixed-header-list-item">Resume</li>
+          <li class="fixed-header-list-item">Subjects</li> -->
+        </ul>
+      </div>
+      <div class="block" name="tutor-about">
+        <app-tutor-about [tutor]="tutor"></app-tutor-about>
+      </div>
+      <div class="block" name="tutor-schedule" hidden>
+        <app-tutor-schedule [tutor]="tutor"></app-tutor-schedule>
+      </div>
+      <!-- <div class="block">
+        <section class="block-wrap">
+          <h3 class="main-title"><span>What students say</span></h3>
+          <div class="box-group">
+          </div>
+        </section>
+      </div>
+      <div class="block">
+        <app-tutor-resume></app-tutor-resume>
+      </div>
+      <div class="block">
+        <app-tutor-subjects></app-tutor-subjects>
+      </div> -->
+    </div>
+    <div class="profile-side-panel-wrap">
+      <app-tutor-side-panel [tutor]="tutor"></app-tutor-side-panel>
+    </div>
+  </div>
+</div>

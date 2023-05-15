@@ -1,0 +1,100 @@
+.box {
+    background-color: #fff;
+    border-radius: 4px;
+    position: relative;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .box-header {
+    border-bottom: 1px solid #f2f2f2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 14px;
+    padding-bottom: 13px;
+    min-height: 60px;
+  }
+  .box-title {
+    font-size: 22px;
+    line-height: 1.27272727;
+    font-weight: 400;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 0 5px 0;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .form__container {
+    width: 100%;
+    padding: 32px;
+  }
+  
+  .form__wrapper a {
+    color: #2e81a0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .form__wrapper .form__title {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #090f19;
+    margin-bottom: 10px;
+  }
+  .form__wrapper .form-group {
+  }
+  .form__wrapper .form-group label {
+    font-size: 13px;
+    line-height: 1.23076923;
+    font-weight: 400;
+    color: #6f757b;
+    margin-bottom: 6px;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .form__wrapper .form-group input {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none;
+    border: 1px solid #d5dde2;
+    border-radius: 2px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    color: #384047;
+    backface-visibility: hidden;
+    transition: color 50ms, border 50ms, background 50ms, box-shadow 0.2s;
+  }
+  .form__wrapper .form-group textarea, select {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    border: 1px solid #d5dde2;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #384047;
+    backface-visibility: hidden;
+    transition: color 50ms, border 50ms, background 50ms, box-shadow 0.2s;
+  } 
+  
+  .form__wrapper .form-group .form-control:hover,
+  .form__wrapper .form-group .form-control:focus,
+  .form__wrapper .form-group .form-control:active {
+    border: 1px solid #929699;
+    outline: none;
+    box-shadow: none;
+  }

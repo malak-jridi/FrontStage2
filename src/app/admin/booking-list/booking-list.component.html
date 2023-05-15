@@ -1,0 +1,61 @@
+<div class="card p-4 m-4">
+  <div>
+    <div class="page-title">Bookings</div>
+  </div>
+  <div>
+<table class="table align-middle mb-0 bg-white custom-table">
+  <thead class="bg-light">
+    <tr>
+      <th>Id</th>
+      <th>Booking Date</th>
+      <th>Booking From</th>
+      <th>Booking To</th>
+      <th>Tutor Rate</th>
+      <th>Tutor Name</th>
+      <th>Student Name</th>
+      <th>Accepted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let booking of bookings">
+    <tr>
+     
+      <td>
+          {{booking.id}}
+        </td>
+        <td>
+
+          {{booking.bookingDate}}
+        </td>
+        
+        <td>
+
+          {{booking.bookingFrom}}
+        </td>
+        <td>
+
+          {{booking.bookingTo}}
+        </td>
+        <td>
+
+          {{booking.tutor.rate}}
+        </td>
+        <td>
+
+          {{booking.tutor.name}}
+        </td>
+        <td>
+
+          {{booking.student.name}}
+        </td>
+        <td>
+          <div *ngIf="booking.accepted; else elseBlock">Accepted</div>
+          <ng-template #elseBlock>Not Accepted</ng-template>
+        </td>
+    </tr>
+  </ng-container>
+
+  </tbody>
+</table>
+</div>
+</div>

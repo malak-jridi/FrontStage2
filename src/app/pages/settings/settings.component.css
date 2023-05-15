@@ -1,0 +1,15 @@
+.settings-wrapper {
+  background-color: #edeff0;
+  width: 100%;
+}
+.settings-profile-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.settings-profile-main {
+  width: 100%;
+  padding: 32px;
+  margin: 0 auto;
+}

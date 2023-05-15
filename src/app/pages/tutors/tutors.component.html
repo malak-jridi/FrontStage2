@@ -1,0 +1,66 @@
+<div class="bg-light">
+  <div class="tutor-wrapper">
+    <div class="mt-4">
+      <h1 class="">Online English tutors & teachers for private lessons</h1>
+    </div>
+    <div class="tutor-filter-wrapper bg-light">
+      <div class="tutor-filter-top-section">
+        <div class="tutor-filter-item d-flex align-items-center">
+          <div class="tutor-filter-item-wrap">
+            <span class="tutor-filter-label">I want to learn</span>
+            <div></div>
+          </div>
+        </div>
+        <div class="tutor-filter-item d-flex align-items-center">
+          <div class="tutor-filter-item-wrap">
+            <span class="tutor-filter-label">Price per lesson</span>
+            <div></div>
+          </div>
+        </div>
+        <div class="tutor-filter-item d-flex align-items-center">
+          <div class="tutor-filter-item-wrap">
+            <span class="tutor-filter-label">Country of birth</span>
+            <div></div>
+          </div>
+        </div>
+        <div class="tutor-filter-item d-flex align-items-center">
+          <div class="tutor-filter-item-wrap">
+            <span class="tutor-filter-label">I am available</span>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <h2 class="tutor-total-number">{{totalTutors | number}} English teachers available</h2>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-12">
+        <ul *ngFor="let tutor of tutors" class="list-unstyled">
+          <li class="mt-2">
+            <app-tutor-card-item [tutor]="tutor"></app-tutor-card-item>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="col-md-4">
+        <div class="tutor-side-wrapper mt-2">
+          <div class="video-wrapper">
+            <div class="video-preview" role="button">
+              <div class="video-button"></div>
+            </div>
+          </div>
+          <div class="availability-timezone-detail">
+            <app-icon-web fill="#aeb5bc"></app-icon-web>
+            <span class="ml-1 mt-1">Times are shown in your local timezone</span>
+          </div>
+          <div class="mt-2">
+            <button class="button book-btn btn-secondary bg-secondary w-100">
+              View full schedule
+            </button>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+

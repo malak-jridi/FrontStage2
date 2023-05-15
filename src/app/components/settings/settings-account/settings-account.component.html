@@ -1,0 +1,257 @@
+<div class="box">
+  <div class="box-header">
+    <h2 class="box-title">Account Setting</h2>
+  </div>
+  <div class="form__wrapper">
+    <div class="form__container">
+      <form class="form__wrap" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <div class="row">
+            <div class="col col-md-4">
+              <label for="name">Profile Image (2MB) *</label>
+            </div>
+            <div class="col col-md-8">
+              <app-image-upload 
+                format="image"
+                [image]="author.image"
+                (fileUpload)="fileUpload($event, 'image')"
+              >
+              </app-image-upload>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label>Name *</label>
+            </div>
+            <div class="col col-md-8">
+              <input
+                type="text"
+                formControlName="name"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+              />
+              <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                <div *ngIf="f['name'].errors['required']">Name is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label>Surname *</label>
+            </div>
+            <div class="col col-md-8">
+              <input
+                type="text"
+                formControlName="surname"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['surname'].errors }"
+              />
+              <div *ngIf="submitted && f['surname'].errors" class="invalid-feedback">
+                <div *ngIf="f['surname'].errors['required']">Surname is required</div>
+                <div *ngIf="f['surname'].errors['minlength']">
+                  Username must be at least 6 characters
+                </div>
+                <div *ngIf="f['surname'].errors['maxlength']">
+                  Username must not exceed 20 characters
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label>Email *</label>
+            </div>
+            <div class="col col-md-8">
+              <input
+                type="text"
+                formControlName="email"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+              />
+              <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="author?.role === 'teacher'" class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label for="country">Country *</label>
+            </div>
+            <div class="col col-md-8">
+              <select 
+                class="form-control" 
+                name="country" 
+                id="country" 
+                formControlName="country" 
+                [ngClass]="{ 'is-invalid': submitted && f['country'].errors }"
+              >
+                <option value="" disabled selected>Select Country</option>
+                <option *ngFor="let country of countries" [ngValue]="country.name">
+                  {{country.name}}
+                </option>
+              </select>
+              <div
+                *ngIf="submitted && f['country'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['country'].errors['required']">
+                  Country is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="author?.role === 'teacher'" class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label for="language">Language *</label>
+            </div>
+            <div class="col col-md-8">
+              <select 
+                class="form-control" 
+                name="language" 
+                id="language" 
+                formControlName="language"
+                [ngClass]="{ 'is-invalid': submitted && f['language'].errors }"
+              >
+                <option value="" disabled selected>Select Language</option>
+                <option *ngFor="let language of languages" [value]="language.name2">{{language.name2}}</option>
+              </select>
+              <div
+                *ngIf="submitted && f['language'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['language'].errors['required']">
+                  Language is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="author?.role === 'teacher'" class="form-group">
+          <div class="row">
+            <div class="col col-md-4">
+              <label>Certification (PDF) *</label>
+            </div>
+            <div class="col col-md-8">
+              <app-file-upload (fileUpload)="fileUpload($event, 'certification')"></app-file-upload>
+              <p class="mt-1">{{form.get('certification')?.value || author.certification}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="author?.role === 'teacher'" class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label for="rate">Rate ( USD ) *</label>
+            </div>
+            <div class="col col-md-8">
+              <input
+                type="number"
+                placeholder="rate"
+                class="form-control"
+                formControlName="rate"
+                [ngClass]="{ 'is-invalid': submitted && f['rate'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['rate'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['rate'].errors['rate']">
+                  Rate is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="author?.role === 'teacher'" class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label>Headline *</label>
+            </div>
+            <div class="col col-md-8">
+              <input
+                type="text"
+                placeholder="English Tutoring..."
+                formControlName="headline"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['headline'].errors }"
+              />
+              <div
+                *ngIf="submitted && f['headline'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['headline'].errors['headline']">
+                  Headline is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="author?.role === 'teacher'" class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label for="description">Description *</label>
+            </div>
+            <div class="col col-md-8">
+              <textarea
+                id="description"
+                class="form-control"
+                placeholder="Description"
+                formControlName="description"
+                rows="6"
+                [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"
+              >
+              </textarea>
+              <div
+                *ngIf="submitted && f['description'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['description'].errors['description']">
+                  Description is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="form-group">
+          <div class="row align-items-center">
+            <div class="col col-md-4">
+              <label for="name">Introduction Video ( Max Size: 10MB ) *</label>
+            </div>
+            <div class="col col-md-8">
+              <app-image-upload format="video" (fileUpload)="fileUpload($event, 'video')"></app-image-upload>
+            </div>
+          </div>
+        </div> -->
+      <div class="form-group">
+        <div class="row">
+          <div class="col col-md-4"></div>
+          <div class="col col-md-8">
+            <button type="submit" class="btn btn-info button-save">
+              Save
+            </button>
+            <button
+              type="button"
+              (click)="onReset()"
+              class="btn btn-danger button-reset ml-1"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="message" class="alert alert-secondary" role="alert">
+      {{ message }}
+    </div>
+  </div>
+</div>

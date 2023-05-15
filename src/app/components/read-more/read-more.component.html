@@ -1,0 +1,4 @@
+{{ content }}
+<br />
+<a class="expand-button" *ngIf="!isContentToggled" (click)="toggleContent()" i18n>Show More</a>
+<a class="expand-button" *ngIf="isContentToggled" (click)="toggleContent()" i18n>Show Less</a>

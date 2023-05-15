@@ -1,0 +1,37 @@
+.block-wrap {
+    padding: 32px 0 0;
+    position: relative;
+}
+.main-title {
+    color: #3c4447;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+}
+.box-group {
+    padding: 12px 0 20px;
+}
+
+.notification {
+    background: hsla(200,9%,94%,.5);
+    color: #3c4447;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding: 12px;
+    position: relative;
+}
+.notification-row {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.time-schedular {
+    width: 100%;
+    margin-top: 12px;
+}

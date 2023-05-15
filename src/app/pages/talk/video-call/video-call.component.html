@@ -1,0 +1,23 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col-lg-8 col-md-6 col-sm-12 video-container">
+      <div id="local-video">
+        <div id="subscriber"></div>
+      </div>
+      <div id="remote-video">
+        <div id="publisher"></div>
+      </div>
+      <div id="video-controls">
+        <button id="mute-btn" class="btn btn-sm btn-primary"><i class="fas fa-microphone"></i></button>
+        <button id="camera-btn" class="btn btn-sm btn-primary"><i class="fas fa-video"></i></button>
+        <button id="end-call-btn" class="btn btn-sm btn-danger" (click)="endCall()"><i
+            class="fas fa-phone-slash"></i></button>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 chat-container">
+      <ng-container *ngIf="isChildLoaded">
+        <app-video-chat [booking]="booking"></app-video-chat>
+      </ng-container>
+    </div>
+  </div>
+</div>

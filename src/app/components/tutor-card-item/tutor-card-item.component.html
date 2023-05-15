@@ -1,0 +1,109 @@
+<div class="tutor-item-wrapper">
+  <div class="row w-100">
+    <div class="col-md-2">
+      <div class="tutor-image-wrapper">
+        <a [href]="'/tutor/' + tutor.id" target="_blank">
+        <span class="tutor-badge w-100">Super tutor</span>
+          <img [src]="tutor.image || '//ssl.gstatic.com/accounts/ui/avatar_2x.png'" alt="tutor-image" class="tutor-image" />
+        </a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="tutor-info-wrapper">
+        <div class="d-flex align-items-start justify-content-between">
+          <div>
+            <a [href]="'/tutor/' + tutor.id" target="_blank" class="tutor-name">{{tutor.name}}</a>
+            <div class="tutor-language d-flex align-items-center">
+              <app-icon-study-subject></app-icon-study-subject>
+              <span class="ml-1 mt-1">{{tutor.language}}</span>
+            </div>
+          </div>
+          <div>
+            <div class="tutor-price-indicator">
+              <div class="tutor-price">${{tutor.rate || 0}}</div>
+              <div class="tutor-duration">50-min lesson</div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-start">
+          <div class="col-md-8">
+            <span class="tutor-headline">{{tutor.headline}} -</span>
+            <span class="tutor-description">
+              {{tutor.description}}
+            </span>
+            <div class="tutor-toggle-button">
+              Read more
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex flex-column mt-3">
+              
+              
+
+              <button class="btn-primary button" type="button" (click)="modalService.open('modal-1')">
+                Book trial lesson
+              </button>
+              
+              <!-- Modal -->
+              <jw-modal id="modal-1">
+                <div *ngIf="message && message !='Wait...'" class="alert alert-secondary" role="alert">
+                  {{ message }}
+                </div>
+
+                <!-- <mat-form-field class="w-100">
+                  <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl"
+                     [disabled]="disabled">
+                  <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                  <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners"  [touchUi]="touchUi"
+                    [color]="color" [enableMeridian]="enableMeridian" [hideTime] ="hideTime">
+                  </ngx-mat-datetime-picker>
+                </mat-form-field> -->
+
+                <div class="m-auto text-center d-flex align-items-center w-100">
+                    <mat-form-field class="w-100 pr-2" subscriptSizing="dynamic">
+                      <input matInput [matDatepicker]="picker" placeholder="Choose a date"
+                      [disabled]="disabled" [(ngModel)]="bookDate" ngDefaultControl [min]="minDate">
+
+                      <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                      
+                      <mat-datepicker #picker [(ngModel)]="bookDate" ngDefaultControl >
+                      </mat-datepicker>
+                    </mat-form-field>
+                  
+                </div>
+
+                <div class="m-auto text-center d-flex align-items-center pt-3 pb-3">                  
+                  <ngx-mat-timepicker [(ngModel)]="fromDate" [disabled]="disabled" [showSpinners]="showSpinners"
+                    [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [showSeconds]="showSeconds"
+                    [color]="color" [enableMeridian]="enableMeridian">
+                  </ngx-mat-timepicker>
+                  <span class="mr-2 ml-2">-</span>
+                  <ngx-mat-timepicker [(ngModel)]="toDate" [disabled]="disabled" [showSpinners]="showSpinners"
+                    [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond" [showSeconds]="showSeconds"
+                    [color]="color" [enableMeridian]="enableMeridian">
+                  </ngx-mat-timepicker>
+                </div>
+
+                <button  class="btn-primary button mt-2" (click)="book();" [disabled]="message == 'Wait...'">
+                  <span *ngIf="(message != 'Wait...')">Book</span>
+                  
+                  <div *ngIf="(message == 'Wait...')" class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </button>
+                <button  class="btn-secondary button mt-2" (click)="modalService.close();">Close</button>
+              </jw-modal>
+
+              <button class="button btn-secondary bg-secondary mt-2">
+                Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

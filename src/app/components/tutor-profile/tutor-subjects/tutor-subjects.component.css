@@ -1,0 +1,24 @@
+.block-wrap {
+    padding: 32px 0 0;
+    position: relative;
+}
+.main-title {
+    color: #3c4447;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+}
+.box-group {
+    padding: 12px 0 20px;
+}
+.tutor-subjects-item-column {
+    border-bottom: 1px solid #eef0f2;
+    color: #6f757b;
+    padding: 20px 0;
+    font-size: 14px;
+}
+.tutor-subjects-item-column dt {
+    color: #384047;
+}

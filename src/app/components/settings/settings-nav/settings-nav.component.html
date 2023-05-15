@@ -1,0 +1,11 @@
+<div class="settings-side-nav">
+  <ul class="list-unstyled">
+    <li 
+      *ngFor="let item of navItems" 
+      [class]="selectedMenu === item.id ? 'setting-side-nav-item active' : 'setting-side-nav-item'" 
+      (click)="onClickMenu(item.id)"
+    >
+      <span>{{item.title}}</span>
+    </li>
+  </ul>
+</div>

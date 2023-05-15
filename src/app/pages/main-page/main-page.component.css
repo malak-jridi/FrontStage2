@@ -1,0 +1,18 @@
+.promo--dark{
+    background: #f3f3f3 !important;
+    padding: 50px 0 0;
+  }
+  .promo__content{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .promo__content .promo__picture{
+    width: 100%;
+    max-width: 50%;
+  }
+  .promo__content .promo__picture img{
+    width: 100%;
+    height: auto;
+  }
+
+  

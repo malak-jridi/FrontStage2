@@ -1,0 +1,23 @@
+<div class="settings-wrapper">
+  <div class="container">
+    <div class="settings-profile-wrapper">
+      <div class="row">
+        <div class="col col-md-3">
+          <app-settings-nav (onChangeMenu)="onChangeMenu($event)"></app-settings-nav>
+        </div>
+        <div class="col col-md-9">
+          <div *ngIf="selectedMenu === 'account'">
+            <div class="settings-profile-main">
+              <app-settings-account></app-settings-account>
+            </div>
+          </div>
+          <div *ngIf="selectedMenu === 'password'">
+            <div class="settings-profile-main">
+              <app-settings-password></app-settings-password>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

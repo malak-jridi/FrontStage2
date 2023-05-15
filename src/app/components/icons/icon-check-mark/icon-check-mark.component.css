@@ -1,0 +1,12 @@
+.icon-check-mark {
+    align-items: center;
+    background: #50bf16;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    height: 16px;
+    justify-content: center;
+    margin-right: 4px;
+    overflow: hidden;
+    width: 16px;
+}

@@ -1,0 +1,117 @@
+footer {
+    background: #384047;
+    color: #e3e5e6;
+    position: relative;
+  }
+  .footer__linksTop {
+    padding: 40px 0;
+  }
+  .footer__linksBottom {
+    border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+    padding: 40px 0;
+  }
+  .footer-group {
+    background: #32393f;
+    font-size: 12px;
+  }
+  .footer ul a {
+    align-items: center;
+    color: #e3e5e6;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.71429;
+  }
+  .footer ul a:hover {
+    text-decoration: underline;
+  }
+  .footer .btn-link {
+    align-items: center;
+    background: none;
+    border: none;
+    color: #e3e5e6;
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  .footer__socialWrapper {
+    list-style: none;
+  }
+  .footer__socialWrapper li {
+  }
+  .footer__socialWrapper li a {
+    align-items: center;
+    color: #e3e5e6;
+    cursor: pointer;
+    display: flex;
+    text-decoration: none;
+  }
+  .footer__socialWrapper li a svg {
+    height: 14px;
+    margin-right: 8px;
+    width: 14px;
+  }
+  .download__appsWrapper {
+  }
+  .download__appsWrapper a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  .download__appsWrapper a img {
+    height: 40px;
+    width: auto;
+  }
+  .site__footerBottom {
+    padding: 40px 0;
+  }
+  .site__footerBottom h5 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  .footer__copyrightsWrap {
+  }
+  .footer__copyrightsWrap p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #e3e5e6;
+  }
+  .copyright__linksWrap {}
+  .copyright__linksWrap li {
+    position: relative;
+    padding-right: 10px;
+  }
+  .copyright__linksWrap li:after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 3px;
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #e3e5e6 !important;
+  }
+  .copyright__linksWrap li:last-child:after {
+    display: none !important;
+  }
+  .copyright__linksWrap li a {
+    font-size: 12px;
+    color: #e3e5e6 !important;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .inline__linksWrapper{
+    margin-left: -6px;
+    margin-right: -6px;
+  }
+  .inline__linksWrapper li{
+    display: inline-block !important;
+    font-size: 12px;
+    padding: 0 6px;
+  }
