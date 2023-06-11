@@ -23,7 +23,7 @@ export class AppComponent {
     });
   }
   isAdmin() {
-    if (Auth.get && Auth.get()?.email == 'test@admin.com')
+    if (Auth.get && Auth.get()?.email?.includes('admin'))
       this.isAdminLoggedIn = true;
   }
 }

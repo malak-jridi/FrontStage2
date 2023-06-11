@@ -24,13 +24,13 @@ export class AdminLoginComponent {
   ) {}
 
   onSubmit() {
-    this.authService.login(this.email, this.password).subscribe({
+    this.authService.adminLogin(this.email, this.password).subscribe({
       next: (data) => {
         this.response = data;
         console.log(data);
         console.log(this.response);
         if (data) {
-          window.location.href = `/tutors`;
+          window.location.href = `/admin`;
 
           localStorage.setItem('author', data);
           //this.router.navigate(['/tutors']);
