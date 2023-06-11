@@ -24,8 +24,7 @@ export class AdminGuard implements CanActivate {
     | boolean
     | UrlTree {
     // Check if the user is logged in
-    // Auth.get()?.role = 'admin' to check admin role
-    if (Auth.get && Auth.get()?.email) {
+    if (Auth.get && Auth.get()?.email == 'test@admin.com') {
       return true;
     }
 

@@ -34,9 +34,21 @@ const routes: Routes = [
 
   { path: 'admin', canActivate: [AdminGuard], component: DashboardComponent },
   { path: 'admin/login', component: AdminLoginComponent },
-  { path: 'admin/teacher', component: TeacherComponent },
-  { path: 'admin/booking', component: BookingListComponent },
-  { path: 'admin/booking/transaction', component: TransactionListComponent },
+  {
+    path: 'admin/teacher',
+    canActivate: [AdminGuard],
+    component: TeacherComponent,
+  },
+  {
+    path: 'admin/booking',
+    canActivate: [AdminGuard],
+    component: BookingListComponent,
+  },
+  {
+    path: 'admin/booking/transaction',
+    canActivate: [AdminGuard],
+    component: TransactionListComponent,
+  },
 ];
 
 @NgModule({
