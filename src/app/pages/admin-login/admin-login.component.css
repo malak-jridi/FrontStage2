@@ -1,0 +1,71 @@
+.form__container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+  .form__wrapper {
+  }
+  .form__wrapper .form__wrap{
+    margin-bottom: 40px;
+  }
+  .form__wrapper a {
+    color: #2e81a0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .form__wrapper .form__title {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 700;
+    color: #090f19;
+    margin-bottom: 10px;
+  }
+  .form__wrapper .form-group {
+  }
+  .form__wrapper .form-group label {
+    font-size: 14px;
+    color: #192435;
+    font-weight: 500;
+    font-family: "PreplyInterV", "PreplyInter-Fallback", sans-serif;
+  }
+  .form__wrapper .form-group .form-control {
+    font-size: 16px;
+    color: #192435;
+    font-weight: 400;
+    font-family: "PreplyInterV", "PreplyInter-Fallback", sans-serif;
+    padding: 11px 14px;
+    border: 2px solid #d8dfe6;
+  }
+  .form__wrapper .form-group .form-control:hover,
+  .form__wrapper .form-group .form-control:focus,
+  .form__wrapper .form-group .form-control:active {
+    border: 2px solid #0096b2;
+    outline: none;
+    box-shadow: none;
+  }
+  .form__wrapper .submit__btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+    background: #0096b2;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .form__wrapper .submit__btn:hover {
+    background: #22a2be;
+  }
+  .form__headerWrapper p{
+    font-weight: 500;
+    color: #090f19;
+  }
+  .form__footerWrapper {
+  }
+  .form__footerWrapper p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8194a7;
+    text-align: center;
+  }

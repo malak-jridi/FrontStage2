@@ -59,7 +59,7 @@ import { SettingsPasswordComponent } from './components/settings/settings-passwo
 import {
   NgxMatDatetimePickerModule,
   NgxMatNativeDateModule,
-  NgxMatTimepickerModule
+  NgxMatTimepickerModule,
 } from '@angular-material-components/datetime-picker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -68,22 +68,23 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { PopupComponent } from './components/popup/popup.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { AdminModule } from './admin/admin.module';
 import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
 import { VideoCallComponent } from './pages/talk/video-call/video-call.component';
 import { VideoChatComponent } from './pages/talk/video-chat/video-chat.component';
-
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    AdminLoginComponent,
 
     HeaderComponent,
     FooterComponent,
@@ -128,10 +129,10 @@ import { VideoChatComponent } from './pages/talk/video-chat/video-chat.component
     SettingsPasswordComponent,
 
     PopupComponent,
-      SideBarComponent,
-      HeaderAdminComponent,
-      VideoCallComponent,
-      VideoChatComponent
+    SideBarComponent,
+    HeaderAdminComponent,
+    VideoCallComponent,
+    VideoChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -158,13 +159,12 @@ import { VideoChatComponent } from './pages/talk/video-chat/video-chat.component
     MatSelectModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatNativeDateModule ,
+    MatNativeDateModule,
     MatIconModule,
     MatTooltipModule,
-    AdminModule
-
+    AdminModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
